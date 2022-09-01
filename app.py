@@ -19,7 +19,7 @@ def get_model():
     summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
     return summarizer
 
-#summarizer = get_model()
+summarizer = get_model()
 
 
 #user_input = st.text_area('Enter URL ')
@@ -58,8 +58,3 @@ if ULR_ and button:
     res = summarizer(chunks, max_length=150, min_length=30, do_sample=False)
     text = ' '.join([summ['summary_text'] for summ in res])
     st.write(text)
-
-
-    #res = generator(user_input, max_length=500, do_sample=True, temperature=0.9)
-    #st.write(res[0]['generated_text'])
-
